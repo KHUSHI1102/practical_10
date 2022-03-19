@@ -1,0 +1,9 @@
+'''ID:20CE142
+   NAME:KHUSHI TALA
+'''
+
+from PIL import Image
+
+image=Image.open('result.png')
+img1 = image.convert('RGB')
+img1.save("output.pdf")
