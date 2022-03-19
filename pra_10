@@ -2,8 +2,12 @@
    NAME:KHUSHI TALA
 '''
 #Generate PDF file of your 3rd Semester Mark-sheet
-from PIL import Image
+from fpdf import FPDF
+pdf=FPDF()
+pdf.add_page() # Add the page
+pdf.set_font("Arial",size=10) # set style and size of font
+f=open("result.txt","r") #open the text file in read mode
+for x in f:
+    pdf.cell(200,10,txt=x,ln=1,align='J') #insert the text in pdf
+pdf.output("RESULT.pdf") # save the pdf with name .pdf
 
-image=Image.open('result.png')
-img1 = image.convert('RGB')
-img1.save("output.pdf")
